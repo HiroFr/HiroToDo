@@ -1,0 +1,13 @@
+{
+  "name": "HiroToDo - Alpha",
+  "description": "Une Todo-List / Des notes",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ]
+}

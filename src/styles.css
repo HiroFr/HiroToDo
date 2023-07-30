@@ -1,0 +1,80 @@
+/*-- Todo - Popup --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  width: 500px;
+  height: 400px;
+  background-color: #000000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  background: rgb(143,0,255);
+  background: linear-gradient(36deg, rgba(143,0,255,1) 18%, rgba(66,0,253,1) 100%);
+  padding: 5px 2px 5px 5px;
+  color: white;
+  border-radius: 8px;
+}
+
+.buttonAdd {
+  border-radius: 8px;
+  border: 1px solid #7E5EFF;
+  background-color: #171717;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.allElement {
+  display: flex;
+  justify-content: space-around;
+}
+
+.zdtDiv {
+  background-color: #1A1A1A;
+  border-radius: 8px;
+  margin: 5px;
+  width: 448px;
+  padding-left: 6px;
+  overflow-wrap: break-word;
+}
+
+.moreIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 1px;
+}
+
+.iDelete {
+  background-color: #D7214C;
+  border-radius: 4px;
+  width: 28px;
+  cursor: pointer;
+}
+
+.iEdit {
+  background-color: #11A758;
+  border-radius: 4px;
+  width: 28px;
+  cursor: pointer;
+}
+
+.footer {
+  font-size: small;
+  color: #a1a1a1;
+}
