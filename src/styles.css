@@ -13,14 +13,26 @@ body {
 .navMenu {
   display: flex;
   justify-content: space-between;
+  margin-top: 6px;
+}
+
+.addNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 6px;
+}
+
+.addNote input {
+  border-radius: 10px;
+  height: 100%;
 }
 
 .logo {
-  background: rgb(143,0,255);
   background: linear-gradient(36deg, rgba(143,0,255,1) 18%, rgba(66,0,253,1) 100%);
-  padding: 5px 2px 5px 5px;
-  color: white;
+  padding: 5px;
   border-radius: 8px;
+  margin-left: 6px;
 }
 
 .buttonAdd {
@@ -37,6 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 12px;
 }
 
 .allElement {
@@ -77,4 +90,7 @@ body {
 .footer {
   font-size: small;
   color: #a1a1a1;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6px;
 }
