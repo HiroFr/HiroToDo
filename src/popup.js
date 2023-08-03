@@ -12,10 +12,12 @@ function saveItemsToLocalStorage(items) {
 // Fonction pour ajouter un élément
 function addItem() {
     const nameInput = document.getElementById("name");
+    const descriptionInput = document.getElementById("description");
     const itemName = nameInput.value;
+    const itemDescription = descriptionInput.value;
 
-    if (itemName.trim() !== "") {
-        const newItem = { name: itemName };
+    if (itemName.trim() && itemDescription.trim() !== "") {
+        const newItem = { name: itemName, description: itemDescription };
         const items = getItemsFromLocalStorage();
         items.push(newItem);
         saveItemsToLocalStorage(items);
@@ -35,7 +37,8 @@ function displayItems() {
         addToDo.innerHTML = `
         <div class="allElement"> <!-- note avec l'encoche, la zone de texte, le bouton supprimé et le bouton d'édition -->
             <div class="zdtDiv"> <!-- Boite pour le texte -->
-                <span class="zdt">${item.name}</span> <!-- zone de texte -->
+                <span class="zdtName">${item.name}</span> <!-- zone de texte -->
+                <span class="zdtDesc">${item.description}</span> <!-- zone de texte -->
             </div>
             <div class="moreIcon">
             <img class="iDelete" src="../assets/icon/delete.svg" alt="Supprimer"> <!-- icône Modifier -->

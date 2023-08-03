@@ -1,12 +1,12 @@
 /*-- Todo - Popup --*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
 
 body {
-  width: 500px;
-  height: 400px;
+  width: 600px;
+  height: 580px;
   background-color: #000000;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Readex Pro', sans-serif;
   font-size: 20px;
 }
 
@@ -47,30 +47,40 @@ body {
 
 #itemList {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .allElement {
   display: flex;
-  justify-content: space-around;
-}
-
-.zdtDiv {
   background-color: #1A1A1A;
   border-radius: 8px;
   margin: 5px;
-  width: 448px;
+}
+
+.zdtDiv {
+  margin-left: 8px;
+  margin-top: 4px;
+  width: 228px;
+  height: 120px;
   padding-left: 6px;
   overflow-wrap: break-word;
+}
+
+.zdtName {
+
+}
+
+.zdtDesc {
+  
 }
 
 .moreIcon {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  margin: 1px;
+  gap: 8px;
+  margin: 9px 15px 0px 0px;
 }
 
 .iDelete {
