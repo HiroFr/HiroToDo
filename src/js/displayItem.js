@@ -36,6 +36,19 @@ function displayItems() {
     deleteButtons.forEach((btn, index) => {
         btn.addEventListener("click", () => deleteItem(index));
     });
+    
+    const editButtons = document.querySelectorAll(".iEdit");
+    editButtons.forEach((btn, index) => {
+        btn.addEventListener("click", () => openEditModal(index));
+    });
+
+}
+
+function deleteItem(index) {
+    const items = getItemsFromLocalStorage();
+    items.splice(index, 1);
+    saveItemsToLocalStorage(items);
+    displayItems();
 }
 
 // Appel initial pour afficher les éléments existants (s'il y en a)

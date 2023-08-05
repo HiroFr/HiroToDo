@@ -8,13 +8,6 @@ const editDescriptionInput = document.getElementById("editDescription");
 
 let currentIndex = -1;
 
-function setupEditButtons() {
-    const editButtons = document.querySelectorAll(".iEdit");
-    editButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => openEditModal(index));
-    });
-}
-
 // Fonction pour ouvrir la modal d'édition
 function openEditModal(index) {
     currentIndex = index;
@@ -36,7 +29,6 @@ function saveEditChanges() {
         saveItemsToLocalStorage(items);
         displayItems();
         cancelEditModal();
-        setupEditButtons();
     }
 }
 

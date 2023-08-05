@@ -1,14 +1,12 @@
-function setupEditButtons() {
-    const editButtons = document.querySelectorAll(".iEdit");
-    editButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => openEditModal(index));
-    });
-}
+const openAddModalBtn = document.getElementById("btnOpenAddModal");
+const addModal = document.getElementById("addModal");
+const addItemBtn = document.getElementById("addItemBtn");
+const cancelAddBtn = document.getElementById("cancelAddItemBtn");
+const nameInput = document.getElementById("title");
+const descriptionInput = document.getElementById("description");
 
 // Fonction pour ajouter un élément
 function addItem() {
-    const nameInput = document.getElementById("title");
-    const descriptionInput = document.getElementById("description");
     const itemTitle = nameInput.value;
     const itemDescription = descriptionInput.value;
 
@@ -18,9 +16,9 @@ function addItem() {
         items.push(newItem);
         saveItemsToLocalStorage(items);
         nameInput.value = "";
+        descriptionInput.value = "";
         displayItems();
         cancelAddModal();
-        setupEditButtons();
     }
 }
 
@@ -32,12 +30,9 @@ function openAddModal() {
 // Cancel modal
 function cancelAddModal() {
     addModal.style.display = "none";
+    nameInput.value = "";
+    descriptionInput.value = "";
 }
-
-const openAddModalBtn = document.getElementById("btnOpenAddModal");
-const addModal = document.getElementById("addModal");
-const addItemBtn = document.getElementById("addItemBtn");
-const cancelAddBtn = document.getElementById("cancelAddItemBtn");
 
 cancelAddBtn.addEventListener("click", cancelAddModal);
 
