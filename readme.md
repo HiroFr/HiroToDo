@@ -12,7 +12,7 @@ git clone https://github.com/HiroFr/HiroToDo.git
 
 ```
 
-Open your browser then go to extension and click on **load unpacked** and **select HiroToDo folder**.
+Open your browser then go to extension **click developer mode** and click on **load unpacked** and **select HiroToDo folder**.
 
 ## Install via zip
 
@@ -20,4 +20,20 @@ Open your browser then go to extension and click on **load unpacked** and **sele
 
 - Unzip
 
-- Open your browser then go to extension and click on **load unpacked** and **select HiroToDo folder**.
+- Open your browser then go to extension **click developer mode** and click on **load unpacked** and **select HiroToDo folder**.
+
+## Update
+
+If you use the command git :
+
+    - git pull
+
+    - restart the extension
+
+If you use the zip file :
+
+    - download zip file on branch main
+
+    - unzip and replace the previously installed extension folder
+
+    - restart the extension

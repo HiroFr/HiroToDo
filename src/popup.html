@@ -9,15 +9,43 @@
   <div class="navMenu">
     <span class="logo">HiroTodo</span>
     <div class="addNote">
-      <input type="text" id="name" placeholder="Ajouter une note"/>
-      <button id="addItemBtn" class="buttonAdd" type="button">Ajouter</button>
+      <button id="btnOpenAddModal" class="buttonAdd" type="button">Ajouter une note +</button>
     </div>
   </div>
   <div id="itemList"></div>
+
+  <!-- La modal d'ajout -->
+  <div class="modal" id="addModal">
+    <div class="modal-content">
+      <span class="editName custom-underline">Ajouter une note</span>
+      <input type="text" id="title" placeholder="Ajouter un titre">
+      <textarea type="text" id="description" placeholder="Ajouter une description" cols="20" rows="2"></textarea>
+      <div class="btnBottom">
+        <button id="cancelAddItemBtn" class="buttonCancel" type="button">Annuler</button>
+        <button id="addItemBtn" class="buttonAdd" type="button">Ajouter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- La modal d'édition -->
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <span class="editName custom-underline">Modifier ma note</span>
+      <input id="editTitle" type="text" placeholder="Modifier votre titre">
+      <textarea placeholder="Modifier votre description" name="description" id="editDescription" cols="20" rows="2"></textarea>
+      <div class="btnBottom">
+        <button id="cancelEditItemBtn" class="buttonCancel" type="button">Annuler</button>
+        <button id="editItemBtn" class="buttonEdit" type="button">Modifier</button>
+      </div>
+    </div>
+  </div>
+
   <div class="footer"> <!-- Footer -->
     <span class="author">Design and Build by HiroFr - </span>
-    <span class="version">Bêta v1.1</span>
+    <span class="version">Bêta v2.0</span>
   </div>
-  <script src="popup.js"></script>
+  <script src="js/displayItem.js"></script>
+  <script src="js/addItem.js"></script>
+  <script src="js/editItem.js"></script>
 </body>
 </html>
