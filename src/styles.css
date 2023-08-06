@@ -221,3 +221,9 @@ textarea::-webkit-scrollbar-track {
   cursor: pointer;
   padding: 5px;
 }
+
+.links {
+  list-style-type: none;
+  text-decoration: none;
+  color: #ffffff;
+}

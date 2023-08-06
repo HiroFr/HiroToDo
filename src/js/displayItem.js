@@ -22,7 +22,7 @@ function displayItems() {
         <div class="allElement"> <!-- note avec l'encoche, la zone de texte, le bouton supprimé et le bouton d'édition -->
             <div class="zdtDiv"> <!-- Boite pour le texte -->
                 <span class="zdtName">${item.title}</span> <!-- zone de texte -->
-                <span class="zdtDesc">${item.description}</span> <!-- zone de texte -->
+                <span class="zdtDesc">${convertLinksToAnchorTags(item.description)}</span> <!-- zone de texte -->
             </div>
             <div class="moreIcon">
             <img class="iDelete" src="../assets/icon/delete.svg" alt="Supprimer"> <!-- icône Modifier -->
@@ -49,6 +49,16 @@ function deleteItem(index) {
     items.splice(index, 1);
     saveItemsToLocalStorage(items);
     displayItems();
+}
+
+function convertLinksToAnchorTags(text) {
+    const linkRegex = /(?:https?|ftp):\/\/[^\s]+/g;
+
+    const replacedText = text.replace(linkRegex, (match) => {
+        return `<a class="links" href="${match}" target="_blank">${match}</a>`;
+    });
+
+    return replacedText;
 }
 
 // Appel initial pour afficher les éléments existants (s'il y en a)
