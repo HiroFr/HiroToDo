@@ -57,6 +57,7 @@ body {
   background-color: #1A1A1A;
   border-radius: 8px;
   margin: 5px;
+  padding-bottom: 10px;
 }
 
 .zdtDiv {
@@ -65,7 +66,7 @@ body {
   width: 228px;
   height: 120px;
   padding-left: 6px;
-  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .zdtName {
@@ -81,7 +82,7 @@ body {
   display: block;
   padding-top: 12px;
   width: 100%;
-  white-space: nowrap;
+  white-space: break-spaces;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -146,6 +147,7 @@ body {
   background-color: #1A1A1A;
   color: #ffffff;
   font-size: 16px;
+  font-family: 'Readex Pro', sans-serif;
 }
 
 .modal-content textarea {
@@ -160,6 +162,7 @@ body {
   resize: none;
   overflow: hidden;
   overflow-y: scroll;
+  font-family: 'Readex Pro', sans-serif;
 }
 
 textarea::-webkit-scrollbar {
