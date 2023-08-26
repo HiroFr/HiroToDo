@@ -28,11 +28,21 @@ body {
   height: 100%;
 }
 
+.logoAll {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .logo {
   background: linear-gradient(36deg, #8f00ff 18%, #4200fd 100%);
   padding: 5px;
   border-radius: 8px;
   margin-left: 6px;
+}
+
+.logo2 {
+  color: grey;
 }
 
 .buttonAdd {
@@ -64,14 +74,13 @@ body {
   margin-left: 8px;
   margin-top: 4px;
   width: 228px;
-  height: 120px;
   padding-left: 6px;
   overflow: hidden;
 }
 
 .zdtName {
   display: block;
-  padding-top: 12px;
+  padding-top: 8px;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -82,7 +91,7 @@ body {
   display: block;
   padding-top: 12px;
   width: 100%;
-  white-space: break-spaces;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -111,9 +120,10 @@ body {
 .footer {
   font-size: small;
   color: #a1a1a1;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 6px;
+  padding-bottom: 10px;
+  bottom: 0px;
+  left: 35%;
+  text-align: center;
 }
 
 /* Styles pour la modal */
@@ -229,4 +239,36 @@ textarea::-webkit-scrollbar-track {
   list-style-type: none;
   text-decoration: none;
   color: #ffffff;
+}
+
+.modal-content-confirm {
+  display: flex;
+  gap: 23px;
+  background-color: #000000;
+  width: 380px;
+  margin: 72px 0px 0px 100px;
+  padding: 20px;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid #7E5EFF;
+}
+
+.modal-content-confirm input {
+  border-radius: 8px;
+  padding: 16px 8px;
+  border: none;
+  background-color: #1A1A1A;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+.buttonDelete {
+  border-radius: 8px;
+  border: 1px solid #7E5EFF;
+  background-color: #171717;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px;
 }

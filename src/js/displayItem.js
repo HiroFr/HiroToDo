@@ -21,7 +21,7 @@ function displayItems() {
         addToDo.innerHTML = `
         <div class="allElement"> <!-- note avec l'encoche, la zone de texte, le bouton supprimé et le bouton d'édition -->
             <div class="zdtDiv"> <!-- Boite pour le texte -->
-                <span class="zdtName">${item.title}</span> <!-- zone de texte -->
+                <span class="zdtName">${item.title || "Il n'y a pas de titre"}</span> <!-- zone de texte -->
                 <span class="zdtDesc">${item.description}</span> <!-- zone de texte -->
             </div>
             <div class="moreIcon">
@@ -31,24 +31,16 @@ function displayItems() {
         </div>`;
         itemList.appendChild(addToDo);
     });
-
-    const deleteButtons = document.querySelectorAll(".iDelete");
-    deleteButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => deleteItem(index));
-    });
     
     const editButtons = document.querySelectorAll(".iEdit");
     editButtons.forEach((btn, index) => {
         btn.addEventListener("click", () => openEditModal(index));
     });
 
-}
-
-function deleteItem(index) {
-    const items = getItemsFromLocalStorage();
-    items.splice(index, 1);
-    saveItemsToLocalStorage(items);
-    displayItems();
+    const openDeleteModalBtn = document.querySelectorAll(".iDelete");
+    openDeleteModalBtn.forEach((btn, index) => {
+        btn.addEventListener("click", () => openDeleteModal(index));
+    });
 }
 
 // Appel initial pour afficher les éléments existants (s'il y en a)
