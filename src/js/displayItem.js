@@ -21,7 +21,7 @@ function displayItems() {
         addToDo.innerHTML = `
         <div class="allElement"> <!-- note avec l'encoche, la zone de texte, le bouton supprimé et le bouton d'édition -->
             <div class="zdtDiv"> <!-- Boite pour le texte -->
-                <span class="zdtName">${item.title || "Il n'y a pas de titre"}</span> <!-- zone de texte -->
+                <span class="zdtName">${item.title || "Aucun titre"}</span> <!-- zone de texte -->
                 <span class="zdtDesc">${convertLinksToAnchorTags(item.description)}</span> <!-- zone de texte -->
             </div>
             <div class="moreIcon">

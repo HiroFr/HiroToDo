@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+html {
+  --white: #ffffff;
+  --white001: #D6D6D6;
+  --grey: #a1a1a1;
+  --grey001: #2E2E2E;
+  --black: #000000;
+  --black001: #171717;
+  --black002: #1a1a1a;
+  --red: #d7214c;
+  --green: #11A758;
+  --bluePurple: #7E5EFF;
+  --bluePurple001: #7D11FB;
+  --bluePurple002: #8f00ff;
+  --bluePurple003: #4200fd;
+
+  /* -- gradient -- */
+  --gradient-black: rgba(0, 0, 0, 0.502);
+
+  --font-family: 'Readex Pro', sans-serif;
+}
+
+body {
+  width: 594px;
+  height: 580px;
+  background-color: #000000;
+  color: #fff;
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 20px;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--grey);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--black002);
+  border-radius: 5px;
+}
