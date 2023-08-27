@@ -23,11 +23,6 @@ body {
   margin-right: 6px;
 }
 
-.addNote input {
-  border-radius: 10px;
-  height: 100%;
-}
-
 .logoAll {
   display: flex;
   align-items: center;
@@ -57,7 +52,6 @@ body {
 
 #itemList {
   display: flex;
-  gap: 10px;
   margin-top: 10px;
   flex-wrap: wrap;
 }
@@ -237,7 +231,6 @@ textarea::-webkit-scrollbar-track {
 
 .links {
   list-style-type: none;
-  text-decoration: none;
   color: #ffffff;
 }
 
@@ -271,4 +264,25 @@ textarea::-webkit-scrollbar-track {
   color: #ffffff;
   cursor: pointer;
   padding: 5px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #171717;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 4px;
+}
+
+.search img {
+  width: 28px;
+}
+
+.search input {
+  background: none;
+  border: 0px;
+  font-size: 14px;
+  color: #fff;
 }
