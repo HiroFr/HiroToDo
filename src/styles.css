@@ -242,11 +242,11 @@ textarea::-webkit-scrollbar-track {
   gap: 23px;
   background-color: var(--black);
   width: 380px;
-  margin: 72px 0px 0px 100px;
+  margin: 180px 0px 0px 100px;
   padding: 20px;
   flex-direction: column;
   border-radius: 16px;
-  border: 2px solid var(--bluePurple);
+  border: 2px solid var(--red);
 }
 
 .modal-content-confirm input {
@@ -298,9 +298,4 @@ textarea::-webkit-scrollbar-track {
 .search input::placeholder {
   font-size: 20px;
   font-family: var(--font-family);
-}
-
-.lineSeparator {
-  height: 2px;
-  background-color: var(--grey001);
 }
