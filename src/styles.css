@@ -38,6 +38,7 @@
   color: var(--white001);
   cursor: pointer;
   padding: 5px;
+  font-family: var(--font-family);
 }
 
 .buttonAdd:hover {
@@ -146,7 +147,6 @@
   background-color: var(--black002);
   color: var(--white001);
   font-size: 16px;
-  font-family: 'Readex Pro', sans-serif;
 }
 
 .modal-content textarea {
@@ -161,7 +161,6 @@
   resize: none;
   overflow: hidden;
   overflow-y: scroll;
-  font-family: 'Readex Pro', sans-serif;
 }
 
 textarea::-webkit-scrollbar {
@@ -257,10 +256,7 @@ textarea::-webkit-scrollbar-track {
   background-color: var(--black002);
   color: var(--white001);
   font-size: 16px;
-  font-family: 'Readex Pro', sans-serif;
 }
-
-
 
 .buttonDelete {
   border-radius: 8px;
@@ -294,6 +290,17 @@ textarea::-webkit-scrollbar-track {
 .search input {
   background: none;
   border: 0px;
-  font-size: 14px;
+  font-size: 20px;
   color: var(--white001);
+  width: 150px;
+}
+
+.search input::placeholder {
+  font-size: 20px;
+  font-family: var(--font-family);
+}
+
+.lineSeparator {
+  height: 2px;
+  background-color: var(--grey001);
 }
