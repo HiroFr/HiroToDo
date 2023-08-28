@@ -32,12 +32,12 @@
 
 .buttonAdd {
   border-radius: 8px;
-  border: 1px solid var(--bluePurple);
+  border: 2px solid var(--bluePurple);
   background-color: var(--black001);
   font-size: 20px;
   color: var(--white001);
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
   font-family: var(--font-family);
 }
 
@@ -137,7 +137,7 @@
   padding: 20px;
   flex-direction: column;
   border-radius: 16px;
-  border: 1px solid var(--bluePurple);
+  border: 2px solid var(--bluePurple);
 }
 
 .modal-content input {
@@ -205,12 +205,12 @@ textarea::-webkit-scrollbar-track {
 
 .buttonCancel {
   border-radius: 8px;
-  border: 1px solid var(--red);
+  border: 2px solid var(--red);
   background-color: var(--black001);
   font-size: 20px;
   color: var(--white001);
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
 }
 
 .buttonCancel:hover {
@@ -219,12 +219,12 @@ textarea::-webkit-scrollbar-track {
 
 .buttonEdit {
   border-radius: 8px;
-  border: 1px solid var(--bluePurple);
+  border: 2px solid var(--bluePurple);
   background-color: var(--black001);
   font-size: 20px;
   color: var(--white001);
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
 }
 
 .buttonEdit:hover {
@@ -246,7 +246,7 @@ textarea::-webkit-scrollbar-track {
   padding: 20px;
   flex-direction: column;
   border-radius: 16px;
-  border: 1px solid var(--bluePurple);
+  border: 2px solid var(--bluePurple);
 }
 
 .modal-content-confirm input {
@@ -260,12 +260,12 @@ textarea::-webkit-scrollbar-track {
 
 .buttonDelete {
   border-radius: 8px;
-  border: 1px solid var(--bluePurple);
+  border: 2px solid var(--bluePurple);
   background-color: var(--black001);
   font-size: 20px;
   color: var(--white001);
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
 }
 
 .buttonDelete:hover {
