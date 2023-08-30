@@ -7,8 +7,16 @@
 </head>
 <body>
   <div class="navMenu">
-    <span class="logo">HiroTodo</span>
+    <div class="logoAll">
+      <span class="logo">Hiro</span>
+      <span class="logo2">ToDo</span>
+    </div>
+
     <div class="addNote">
+      <div class="search">
+        <img src="../assets/icon/search.svg" alt="search">
+        <input id="searchInput" type="text" placeholder="Recherche ...">
+      </div>
       <button id="btnOpenAddModal" class="buttonAdd" type="button">Ajouter une note +</button>
     </div>
   </div>
@@ -40,12 +48,26 @@
     </div>
   </div>
 
+    <!-- La modal de suppression -->
+    <div class="modal" id="deleteModal">
+      <div class="modal-content-confirm">
+        <span class="deleteName custom-underline">Supprimer cette note ?</span>
+        <input id="deleteTitle" type="text" placeholder="Il n'y a pas de titre" readonly>
+        <div class="btnBottom">
+          <button id="cancelDeleteItemBtn" class="buttonCancel" type="button">Annuler</button>
+          <button id="deleteItemBtn" class="buttonDelete" type="button">Supprimer</button>
+        </div>
+      </div>
+    </div>
+
   <div class="footer"> <!-- Footer -->
-    <span class="author">Design and Build by HiroFr - </span>
-    <span class="version">Bêta v2.0</span>
+    <span class="author">Design and Build by <a href="https://github.com/HiroFr/HiroToDo" target="_blank">HiroFr</a> - </span>
+    <span class="version">Bêta v3.0</span>
   </div>
   <script src="js/displayItem.js"></script>
   <script src="js/addItem.js"></script>
   <script src="js/editItem.js"></script>
+  <script src="js/deleteConfirmItem.js"></script>
+  <script src="js/searchItem.js"></script>
 </body>
 </html>

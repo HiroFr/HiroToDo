@@ -1,20 +1,22 @@
 # HiroToDo 🎉
-Une extension chrome pour une ToDo-List
+A Chrome extension for taking notes and the ToDo-List
 
-Design and Build by HiroFr with ❤️
+*Design and Build by HiroFr with* ❤️
 
+> ### 📌 Important : The data is stocked in your browser in local.
 
-
-## Install via git
+## Install via git 💻
 ```bash
 
 git clone https://github.com/HiroFr/HiroToDo.git
 
 ```
 
-Open your browser then go to extension **click developer mode** and click on **load unpacked** and **select HiroToDo folder**.
+- You must be on the main branch for to have a version stable
 
-## Install via zip
+- Open your browser then go to extension **click developer mode** and click on **load unpacked** and **select HiroToDo folder**.
+
+## Install via zip 📥
 
 - Download the zip file from the git repository "HiroToDo"
 
@@ -22,7 +24,7 @@ Open your browser then go to extension **click developer mode** and click on **l
 
 - Open your browser then go to extension **click developer mode** and click on **load unpacked** and **select HiroToDo folder**.
 
-## Update
+## Update ✅
 
 If you use the command git :
 

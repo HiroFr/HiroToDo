@@ -1,16 +1,12 @@
-// Fonction pour récupérer les éléments depuis le localStorage
 function getItemsFromLocalStorage() {
     const itemsJSON = localStorage.getItem("items");
     return itemsJSON ? JSON.parse(itemsJSON) : [];
 }
 
-// Fonction pour sauvegarder les éléments dans le localStorage
 function saveItemsToLocalStorage(items) {
     localStorage.setItem("items", JSON.stringify(items));
 }
 
-
-// Fonction pour afficher les éléments
 function displayItems() {
     const itemList = document.getElementById("itemList");
     itemList.innerHTML = "";
@@ -21,7 +17,7 @@ function displayItems() {
         addToDo.innerHTML = `
         <div class="allElement"> <!-- note avec l'encoche, la zone de texte, le bouton supprimé et le bouton d'édition -->
             <div class="zdtDiv"> <!-- Boite pour le texte -->
-                <span class="zdtName">${item.title}</span> <!-- zone de texte -->
+                <span class="zdtName">${item.title || "Aucun titre"}</span> <!-- zone de texte -->
                 <span class="zdtDesc">${convertLinksToAnchorTags(item.description)}</span> <!-- zone de texte -->
             </div>
             <div class="moreIcon">
@@ -31,24 +27,16 @@ function displayItems() {
         </div>`;
         itemList.appendChild(addToDo);
     });
-
-    const deleteButtons = document.querySelectorAll(".iDelete");
-    deleteButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => deleteItem(index));
-    });
     
     const editButtons = document.querySelectorAll(".iEdit");
     editButtons.forEach((btn, index) => {
         btn.addEventListener("click", () => openEditModal(index));
     });
 
-}
-
-function deleteItem(index) {
-    const items = getItemsFromLocalStorage();
-    items.splice(index, 1);
-    saveItemsToLocalStorage(items);
-    displayItems();
+    const openDeleteModalBtn = document.querySelectorAll(".iDelete");
+    openDeleteModalBtn.forEach((btn, index) => {
+        btn.addEventListener("click", () => openDeleteModal(index));
+    });
 }
 
 function convertLinksToAnchorTags(text) {
@@ -61,5 +49,4 @@ function convertLinksToAnchorTags(text) {
     return replacedText;
 }
 
-// Appel initial pour afficher les éléments existants (s'il y en a)
 displayItems();
