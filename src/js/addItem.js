@@ -5,7 +5,6 @@ const cancelAddBtn = document.getElementById("cancelAddItemBtn");
 const nameInput = document.getElementById("title");
 const descriptionInput = document.getElementById("description");
 
-// Fonction pour ajouter un élément
 function addItem() {
     const itemTitle = nameInput.value;
     const itemDescription = descriptionInput.value;
@@ -22,12 +21,10 @@ function addItem() {
     }
 }
 
-// Open modal
 function openAddModal() {
     addModal.style.display = "block";
 }
 
-// Cancel modal
 function cancelAddModal() {
     addModal.style.display = "none";
     nameInput.value = "";

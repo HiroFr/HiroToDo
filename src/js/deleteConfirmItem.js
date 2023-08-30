@@ -1,21 +1,20 @@
-// Récupérer les éléments du DOM
 const openDeleteModalBtn = document.querySelectorAll(".iDelete");
 const deleteModal = document.getElementById("deleteModal");
 const cancelDeleteBtn = document.getElementById("cancelDeleteItemBtn");
 const deleteBtn = document.getElementById("deleteItemBtn");
 const deleteTitleInput = document.getElementById("deleteTitle");
-let currentIndexToDelete = -1; // Garder une trace de l'index actuel à supprimer
+let currentIndexToDelete = -1;
 
 function openDeleteModal(index) {
     const items = getItemsFromLocalStorage();
-    currentIndexToDelete = index; // Mettre à jour l'index actuel à supprimer
+    currentIndexToDelete = index;
     deleteTitleInput.value = items[index].title;
     deleteModal.style.display = "block";
 }
 
 function deleteItem() {
     const items = getItemsFromLocalStorage();
-    items.splice(currentIndexToDelete, 1); // Utiliser l'index actuel
+    items.splice(currentIndexToDelete, 1);
     saveItemsToLocalStorage(items);
     displayItems();
     cancelDeleteModal();
