@@ -1,16 +1,12 @@
-// Fonction pour récupérer les éléments depuis le localStorage
 function getItemsFromLocalStorage() {
     const itemsJSON = localStorage.getItem("items");
     return itemsJSON ? JSON.parse(itemsJSON) : [];
 }
 
-// Fonction pour sauvegarder les éléments dans le localStorage
 function saveItemsToLocalStorage(items) {
     localStorage.setItem("items", JSON.stringify(items));
 }
 
-
-// Fonction pour afficher les éléments
 function displayItems() {
     const itemList = document.getElementById("itemList");
     itemList.innerHTML = "";
@@ -53,5 +49,4 @@ function convertLinksToAnchorTags(text) {
     return replacedText;
 }
 
-// Appel initial pour afficher les éléments existants (s'il y en a)
 displayItems();
