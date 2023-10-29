@@ -14,6 +14,9 @@
   },
   "permissions": [
     "scripting",
-    "activeTab"
+    "activeTab",
+    "notifications",
+    "downloads",
+    "fileSystem"
   ]
 }

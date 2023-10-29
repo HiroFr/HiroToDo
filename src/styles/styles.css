@@ -1,4 +1,4 @@
-@import url(styles/variables.css);
+@import url(variables.css);
 
 .navMenu {
   display: flex;
@@ -6,10 +6,14 @@
   margin-top: 6px;
 }
 
+.navMenu img {
+  cursor: pointer;
+}
+
 .addNote {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   margin-right: 6px;
 }
 
@@ -30,42 +34,53 @@
   color: var(--grey);
 }
 
+.downUpload img {
+  width: 32px;
+  cursor: pointer;
+}
+
 .buttonAdd {
   border-radius: 8px;
-  border: 2px solid var(--bluePurple);
-  background-color: var(--black001);
+  border: 2px solid var(--button-dark-blue-color);
+  background-color: var(--button-dark-blue-color);
   font-size: 20px;
-  color: var(--white001);
+  color: var(--primary-text-color);
   cursor: pointer;
-  padding: 4px;
+  padding: 4px 12px;
   font-family: var(--font-family);
 }
 
-.buttonAdd:hover {
-  background-color: var(--bluePurple);
-  color: var(--white);
+.buttonConfirmAdd {
+  border-radius: 8px;
+  background-color: var(--confirm-background-color);
+  border: 2px solid var(--confirm-background-color);
+  font-size: 20px;
+  color: var(--primary-text-color);
+  cursor: pointer;
+  padding: 4px 12px;
+  font-family: var(--font-family);
 }
 
 #itemList {
   display: flex;
   margin-top: 10px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .allElement {
   display: flex;
-  background-color: var(--black002);
+  background-color: var(--items-dark-color);
   border-radius: 8px;
-  margin: 5px;
-  padding-bottom: 10px;
+  padding: 6px 0px;
+  align-items: center;
 }
 
 .zdtDiv {
-  margin-left: 8px;
-  margin-top: 4px;
-  width: 228px;
-  padding-left: 6px;
+  width: 225px;
+  height: 84px;
   overflow: hidden;
+  margin: 8px 0px -8px 16px;
 }
 
 .zdtName {
@@ -90,27 +105,29 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 9px 15px 0px 0px;
+  margin: 0px 16px 0px 16px;
 }
 
 .iDelete {
-  background-color: var(--red);
+  background-color: var(--cancel-background-color);
   border-radius: 4px;
-  width: 28px;
+  width: 24px;
+  padding: 4px;
   cursor: pointer;
 }
 
 .iEdit {
-  background-color: var(--green);
+  background-color: var(--confirm-background-color);
   border-radius: 4px;
-  width: 28px;
+  width: 24px;
+  padding: 4px;
   cursor: pointer;
 }
 
 .footer {
   font-size: small;
   color: var(--grey);
-  padding-bottom: 10px;
+  padding: 10px 0px;
   bottom: 0px;
   left: 35%;
   text-align: center;
@@ -135,19 +152,28 @@
 .modal-content {
   display: flex;
   gap: 23px;
-  background-color: var(--black);
-  width: 380px;
-  height: 390px;
-  margin: 72px 0px 0px 100px;
-  padding: 20px;
+  background-color: var(--background-dark-color);
+  width: 196px;
+  height: 580px;
+  padding: 10px;
   flex-direction: column;
-  border-radius: 16px;
-  border: 2px solid var(--bluePurple);
+  border-radius: 8px;
+}
+
+.titleModal {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.textTitleModal {
+  font-size: large;
 }
 
 .modal-content input {
   border-radius: 8px;
-  padding: 16px 8px;
+  padding: 8px;
+  margin: 0px 10px;
   border: none;
   background-color: var(--black002);
   color: var(--white001);
@@ -159,11 +185,12 @@
   font-size: 16px;
   border-radius: 8px;
   padding: 16px 8px;
+  margin: 0px 10px;
   border: none;
   background-color: var(--black002);
   color: var(--white001);
-  width: 365px;
-  height: 180px;
+  width: auto;
+  height: 341px;
   resize: none;
   overflow: hidden;
   overflow-y: scroll;
@@ -209,18 +236,27 @@ textarea::-webkit-scrollbar-track {
   gap: 12px;
 }
 
+.seperator-line {
+  height: 1px;
+  background-color: var(--border-dark-grey-color);
+  margin: 0px 10px;
+}
+
+.backToItems {
+  cursor: pointer;
+}
+
 .buttonCancel {
   border-radius: 8px;
-  border: 2px solid var(--red);
-  background-color: var(--black001);
+  border: 2px solid var(--cancel-border-color);
   font-size: 20px;
-  color: var(--white001);
+  color: var(--primary-text-color);
   cursor: pointer;
   padding: 4px;
 }
 
 .buttonCancel:hover {
-  background-color: var(--red);
+  background-color: var(--cancel-background-color);
 }
 
 .buttonEdit {
@@ -246,62 +282,138 @@ textarea::-webkit-scrollbar-track {
 .modal-content-confirm {
   display: flex;
   gap: 23px;
-  background-color: var(--black);
+  background-color: var(--background-dark-color);
   width: 380px;
   margin: 180px 0px 0px 100px;
   padding: 20px;
   flex-direction: column;
   border-radius: 16px;
-  border: 2px solid var(--red);
+  border: 2px solid var(--cancel-border-color);
 }
 
 .modal-content-confirm input {
   border-radius: 8px;
-  padding: 16px 8px;
+  padding: 12px;
   border: none;
-  background-color: var(--black002);
-  color: var(--white001);
+  background-color: var(--items-dark-color);
+  color: var(--primary-text-color);
   font-size: 16px;
+}
+
+.deleteName {
+  color: var(--primary-text-color);
+}
+
+.btnCancel {
+  border-radius: 8px;
+  border: 2px solid var(--cancel-background-color);
+  font-size: 20px;
+  color: var(--primary-text-color);
+  background-color: var(--cancel-background-color);
+  cursor: pointer;
+  padding: 4px 50px;
 }
 
 .buttonDelete {
   border-radius: 8px;
-  border: 2px solid var(--bluePurple);
-  background-color: var(--black001);
+  border: 2px solid var(--confirm-background-color);
+  background-color: var(--confirm-background-color);
   font-size: 20px;
-  color: var(--white001);
+  color: var(--primary-text-color);
   cursor: pointer;
-  padding: 4px;
-}
-
-.buttonDelete:hover {
-  background-color: var(--bluePurple);
-  color: var(--white);
+  padding: 4px 50px;
 }
 
 .search {
   display: flex;
   align-items: center;
   border-radius: 8px;
-  background-color: var(--grey001);
+  background-color: var(--items-dark-color);
   font-size: 20px;
-  color: var(--white001);
+  color: var(--secondary-text-color);
   padding: 4px;
-}
-
-.search img {
-  width: 28px;
+  border: 2px solid var(--border-dark-grey-color);
 }
 
 .search input {
   background: none;
   border: 0px;
   font-size: 20px;
-  color: var(--white001);
+  color: var(--secondary-text-color);
   width: 150px;
 }
 
 .search input::placeholder {
   font-size: 20px;
   font-family: var(--font-family);
+}
+
+
+.modal-content-EI {
+  display: flex;
+  gap: 23px;
+  background-color: var(--background-dark-color);
+  width: 196px;
+  height: 580px;
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.zoneUpload input {
+  padding: 16px 22px;
+  cursor: pointer;
+}
+
+.spanWarningMessageFile {
+  text-align: center;
+  font-size: large;
+}
+
+.zoneUpload {
+  text-align: center;
+}
+
+.fileInputBtn::before {
+  content: 'Choisir un fichier';
+  color: var(--primary-text-color);
+  background: var(--button-dark-blue-color);
+  border: 1px solid var(--button-dark-blue-color);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 31px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
+
+.IExport {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.IExport:hover {
+  background-color: var(--items-dark-color);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.IExport span {
+  font-size: large;
+  justify-content: space-between;
+}
+
+.network {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.network img {
+  cursor: pointer;
 }

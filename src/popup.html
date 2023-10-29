@@ -3,58 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/src/styles/styles.css">
 </head>
 <body>
   <div class="navMenu">
-    <div class="logoAll">
-      <span class="logo">Hiro</span>
-      <span class="logo2">ToDo</span>
-    </div>
-
-    <div class="addNote">
-      <div class="search">
-        <img src="../assets/icon/search.svg" alt="search">
-        <input id="searchInput" type="text" placeholder="Recherche ...">
+    <img id="openMenuModalBtn" src="../assets/icon/menu-burger.svg" alt="menu-burger">
+      <div class="addNote">
+        <div class="search">
+          <img src="../assets/icon/search.svg" alt="search">
+          <input id="searchInput" type="text" placeholder="Recherche ...">
+        </div>
+        <button id="btnOpenAddModal" class="buttonAdd" type="button">Ajouter une note +</button>
       </div>
-      <button id="btnOpenAddModal" class="buttonAdd" type="button">Ajouter une note +</button>
     </div>
   </div>
+
   <div id="itemList"></div>
+
+  <!-- La modal du menu-burger -->
+  <div class="modal" id="menuModal">
+    <div class="modal-content">
+      <div class="logoAll">
+        <img id="backToMenuBtn" class="backToItems" src="../assets/icon/menu-open.svg" alt="menu-open" title="Retour">
+        <span class="logo">Hiro</span>
+        <span class="logo2">ToDo</span>
+      </div>
+      <div class="content">
+        <div class="IExport" id="openUploadButton">
+          <span>Import / Export</span>
+          <img src="../assets/icon/sim-card-download.svg" alt="sim-card-download">
+        </div>
+        <div class="network">
+          <a href="https://github.com/HiroFr" target="_blank">
+            <img src="../assets/icon/github.svg" alt="github">
+          </a>
+          <a href="https://twitter.com/Hir0Fr" target="_blank">
+            <img src="../assets/icon/x.svg" alt="x">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- La modal d'ajout -->
   <div class="modal" id="addModal">
     <div class="modal-content">
-      <span class="editName custom-underline">Ajouter une note</span>
-      <input type="text" id="title" placeholder="Ajouter un titre">
-      <textarea type="text" id="description" placeholder="Ajouter une description" cols="20" rows="2"></textarea>
-      <div class="btnBottom">
-        <button id="cancelAddItemBtn" class="buttonCancel" type="button">Annuler</button>
-        <button id="addItemBtn" class="buttonAdd" type="button">Ajouter</button>
+      <div class="titleModal">
+        <img id="cancelAddItemBtn" class="buttonCancel" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
+        <span class="textTitleModal">Ajouter une note</span>
       </div>
+      <input type="text" id="title" placeholder="Ajouter un titre">
+      <div class="seperator-line"></div>
+      <textarea type="text" id="description" placeholder="Ajouter une description" cols="20" rows="2"></textarea>
+        <button id="addItemBtn" class="buttonConfirmAdd" type="button">Ajouter</button>
     </div>
   </div>
 
   <!-- La modal d'édition -->
   <div class="modal" id="editModal">
     <div class="modal-content">
-      <span class="editName custom-underline">Modifier ma note</span>
+      <div class="titleModal">
+        <img id="cancelEditItemBtn" class="buttonCancel" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
+        <span class="textTitleModal">Modifier une note</span>
+      </div>
       <input id="editTitle" type="text" placeholder="Modifier votre titre">
       <textarea placeholder="Modifier votre description" name="description" id="editDescription" cols="20" rows="2"></textarea>
-      <div class="btnBottom">
-        <button id="cancelEditItemBtn" class="buttonCancel" type="button">Annuler</button>
-        <button id="editItemBtn" class="buttonEdit" type="button">Modifier</button>
-      </div>
+      <button id="editItemBtn" class="buttonConfirmAdd" type="button">Modifier</button>
     </div>
   </div>
 
     <!-- La modal de suppression -->
     <div class="modal" id="deleteModal">
       <div class="modal-content-confirm">
-        <span class="deleteName custom-underline">Supprimer cette note ?</span>
+        <span class="deleteName">Supprimer cette note ?</span>
         <input id="deleteTitle" type="text" placeholder="Il n'y a pas de titre" readonly>
         <div class="btnBottom">
-          <button id="cancelDeleteItemBtn" class="buttonCancel" type="button">Annuler</button>
+          <button id="cancelDeleteItemBtn" class="btnCancel" type="button">Annuler</button>
+          <button id="deleteItemBtn" class="buttonDelete" type="button">Supprimer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- La modal d'upload -->
+    <div class="modal" id="uploadModal">
+      <div class="modal-content-EI">
+        <div class="titleModal">
+          <img id="cancelUploadBtn" class="buttonCancel" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
+          <span class="textTitleModal">Import / Export</span>
+        </div>
+        <span class="spanWarningMessageFile">Votre fichier se télécharge après avoir enregistrer sa destination.</span>
+        <button id="downloadData" class="buttonAdd">Télécharger</button>
+        <div class="seperator-line"></div>
+        <span class="spanWarningMessageFile textColorRed">Attention ! Cela va remplacer vos précédentes prise de notes/ToDo !</span>
+        <div class="zoneUpload">
+          <label for="fileInput" class="fileInputBtn"></label>
+          <input id="fileInput" class="displayNone" type="file" accept=".json">
+        </div>
+        <span id="displayNameFile" class="textColorPrimary center"></span>
+        <button id="uploadButton" class="buttonConfirmAdd" type="button">Ajouter</button>
+      </div>
+    </div>
+
+    <!-- La modal de confirmation d'ajout -->
+    <div class="modal" id="confirmModal" style="display: none;">
+      <div class="modal-content-confirm">
+        <span class="deleteName">Voulez vous vraiment ajouter ce fichier JSON ?</span>
+        <span id="displayNameFile"></span>
+        <div class="btnBottom">
+          <button id="cancelDeleteItemBtn" class="btnCancel" type="button">Annuler</button>
           <button id="deleteItemBtn" class="buttonDelete" type="button">Supprimer</button>
         </div>
       </div>
@@ -62,12 +118,16 @@
 
   <div class="footer"> <!-- Footer -->
     <span class="author">Design and Build by <a href="https://github.com/HiroFr/HiroToDo" target="_blank">HiroFr</a> - </span>
-    <span class="version">Bêta v3.0</span>
+    <span class="version">Bêta v4.5</span>
   </div>
   <script src="js/displayItem.js"></script>
   <script src="js/addItem.js"></script>
   <script src="js/editItem.js"></script>
   <script src="js/deleteConfirmItem.js"></script>
   <script src="js/searchItem.js"></script>
+  <script src="js/notifItem.js"></script>
+  <script src="js/exportData.js"></script>
+  <script src="js/uploadData.js"></script>
+  <script src="js/menuModal.js"></script>
 </body>
 </html>

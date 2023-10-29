@@ -12,13 +12,13 @@ function displayItems() {
     itemList.innerHTML = "";
 
     const items = getItemsFromLocalStorage();
-    items.forEach((item, index) => {
+    items.forEach((item) => {
         const addToDo = document.createElement("div");
         addToDo.innerHTML = `
         <div class="allElement"> <!-- note avec l'encoche, la zone de texte, le bouton supprimé et le bouton d'édition -->
             <div class="zdtDiv"> <!-- Boite pour le texte -->
-                <span class="zdtName">${item.title || "Aucun titre"}</span> <!-- zone de texte -->
-                <span class="zdtDesc">${convertLinksToAnchorTags(item.description)}</span> <!-- zone de texte -->
+                <span title="${item.title}" class="zdtName">${item.title || "Aucun titre"}</span> <!-- zone de texte -->
+                <span title="${item.description}" class="zdtDesc">${convertLinksToAnchorTags(item.description) || "Aucune Description"}</span> <!-- zone de texte -->
             </div>
             <div class="moreIcon">
             <img class="iDelete" src="../assets/icon/delete.svg" alt="Supprimer"> <!-- icône Modifier -->
