@@ -100,18 +100,19 @@
           <input id="fileInput" class="displayNone" type="file" accept=".json">
         </div>
         <span id="displayNameFile" class="textColorPrimary center"></span>
-        <button id="uploadButton" class="buttonConfirmAdd" type="button">Ajouter</button>
+        <button id="uploadConfirmButton" class="buttonConfirmUpload" type="button" disabled>Importer</button>
       </div>
     </div>
 
     <!-- La modal de confirmation d'ajout -->
-    <div class="modal" id="confirmModal" style="display: none;">
+    <div class="modal" id="confirmModal">
       <div class="modal-content-confirm">
         <span class="deleteName">Voulez vous vraiment ajouter ce fichier JSON ?</span>
-        <span id="displayNameFile"></span>
+        <input id="displayNameFile" class="textColorPrimary center" type="text" readonly>
+        <span class="textColorPrimary center"><b class="textColorRed">IMPORTANT :</b></br><b>Après avoir validé l'importation de la data, l'extension se recharge automatiquement.</b></br><i>Veillez à bien Exporter votre data si vous souhaitez conserver vos précédentes prise de notes.</i></span>
         <div class="btnBottom">
-          <button id="cancelDeleteItemBtn" class="btnCancel" type="button">Annuler</button>
-          <button id="deleteItemBtn" class="buttonDelete" type="button">Supprimer</button>
+          <button id="cancelUploadConfirmBtn" class="btnCancel" type="button">Annuler</button>
+          <button id="uploadButton" class="buttonDelete" type="button">Valider</button>
         </div>
       </div>
     </div>

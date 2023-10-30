@@ -61,6 +61,14 @@
   font-family: var(--font-family);
 }
 
+.buttonConfirmUpload {
+  border-radius: 8px;
+  border: 2px solid;
+  font-size: 20px;
+  padding: 4px 12px;
+  font-family: var(--font-family);
+}
+
 #itemList {
   display: flex;
   margin-top: 10px;
@@ -232,7 +240,7 @@ textarea::-webkit-scrollbar-track {
 
 .btnBottom {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -284,7 +292,7 @@ textarea::-webkit-scrollbar-track {
   gap: 23px;
   background-color: var(--background-dark-color);
   width: 380px;
-  margin: 180px 0px 0px 100px;
+  margin: 100px 0px 0px 110px;
   padding: 20px;
   flex-direction: column;
   border-radius: 16px;
@@ -347,7 +355,6 @@ textarea::-webkit-scrollbar-track {
   font-size: 20px;
   font-family: var(--font-family);
 }
-
 
 .modal-content-EI {
   display: flex;
