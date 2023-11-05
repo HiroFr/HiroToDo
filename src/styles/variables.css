@@ -76,3 +76,11 @@ body::-webkit-scrollbar-track {
 .center {
   text-align: center;
 }
+
+.background {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: var(--black002);
+  color: var(--white001);
+  text-align: start;
+}

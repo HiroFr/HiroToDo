@@ -44,13 +44,25 @@ document.getElementById('uploadButton').addEventListener('click', function () {
   }
 });
 
+const nameFile = document.getElementById('displayNameFile');
+const nameFileOther = document.getElementById('displayNameFileOther');
+
+let selectedFileName = '';
+
 fileInput.addEventListener('change', function(e) {
-  var nomFichier = e.target.files[0].name;
-  var nameFile = document.getElementById("displayNameFile");
-  if(nameFile) {
-    nameFile.innerHTML = nomFichier;
-  }
+    const nomFichier = e.target.files[0].name;
+    selectedFileName = nomFichier;
+    if (nameFile) {
+        nameFile.innerHTML = nomFichier;
+    }
+    displayFileNameElsewhere();
 });
+
+function displayFileNameElsewhere() {
+    if (nameFileOther) {
+        nameFileOther.innerHTML = selectedFileName;
+    }
+}
 
 fileInput.addEventListener('change', function(){
   if(fileInput.value === ''){
