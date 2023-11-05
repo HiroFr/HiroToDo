@@ -15,6 +15,18 @@ html {
   --bluePurple002: #8f00ff;
   --bluePurple003: #4200fd;
 
+  --background-dark-color: #121113;
+  --items-dark-color: #232225;
+  --button-dark-blue-color: #303374;
+  --primary-text-color: #EEEEF0;
+  --secondary-text-color: #B5B2BC;
+  --border-dark-grey-color: #3C393F;
+  --confirm-background-color: #174933;
+  --cancel-background-color: #611623;
+  --cancel-border-color: #8C333A;
+  --cancel-text-color-dark: #FF9592;
+
+
   /* -- gradient -- */
   --gradient-black: rgba(0, 0, 0, 0.502);
 
@@ -22,12 +34,13 @@ html {
 }
 
 body {
-  width: 594px;
+  width: 632px;
   height: 580px;
-  background-color: #000000;
+  background-color: var(--background-dark-color);
   color: #fff;
   font-family: var(--font-family);
   font-size: 20px;
+  border-radius: 8px;
 }
 
 textarea:focus, input:focus {
@@ -46,4 +59,28 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background-color: var(--black002);
   border-radius: 5px;
+}
+
+.displayNone {
+  display: none;
+}
+
+.textColorRed {
+  color: var(--cancel-text-color-dark);
+}
+
+.textColorPrimary {
+  color: var(--primary-text-color);
+}
+
+.center {
+  text-align: center;
+}
+
+.background {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: var(--black002);
+  color: var(--white001);
+  text-align: start;
 }

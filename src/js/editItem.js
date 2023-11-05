@@ -19,7 +19,7 @@ function openEditModal(index) {
 function saveEditChanges() {
     const newName = editTitleInput.value.trim();
     const newDescription = editDescriptionInput.value.trim();
-    if (newName !== "" && newDescription !== "") {
+    if (newName !== "" || newDescription !== "") {
         const items = getItemsFromLocalStorage();
         items[currentIndex].title = newName;
         items[currentIndex].description = newDescription;
