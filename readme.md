@@ -3,7 +3,7 @@ A Chrome extension for taking notes and the ToDo-List
 
 *Design and Build by HiroFr with* ❤️
 
-![HiroToDo_Bêta_4.5](assets/icon/HiroToDo_Bêta_4.5.png)
+<center><img src="assets/icon/HiroToDo_Bêta_4.5.png" alt="drawing" width="400"/></center>
 <div style="text-align: center;">Presentation of the HiroToDo extension in Bêta_v4.5</div>
 
 > ### 📌 Important : The data is stocked in your browser in local.
