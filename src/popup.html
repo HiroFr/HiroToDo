@@ -16,13 +16,12 @@
         <button id="btnOpenAddModal" class="buttonAdd" type="button">Ajouter une note +</button>
       </div>
     </div>
-  </div>
 
   <div id="itemList"></div>
 
   <!-- La modal du menu-burger -->
   <div class="modal" id="menuModal">
-    <div class="modal-content">
+    <div class="menu-modal-content">
       <div class="logoAll">
         <img id="backToMenuBtn" class="backToItems" src="../assets/icon/menu-open.svg" alt="menu-open" title="Retour">
         <span class="logo">Hiro</span>
@@ -40,6 +39,9 @@
           <a href="https://twitter.com/Hir0Fr" target="_blank">
             <img src="../assets/icon/x.svg" alt="x">
           </a>
+          <a href="https://twitter.com/Hir0Fr" target="_blank">
+            <img src="../assets/icon/discord.svg" alt="x">
+          </a>
         </div>
       </div>
     </div>
@@ -47,28 +49,65 @@
 
   <!-- La modal d'ajout -->
   <div class="modal" id="addModal">
-    <div class="modal-content">
+    <div id="modalContent" class="modal-content">
       <div class="titleModal">
-        <img id="cancelAddItemBtn" class="buttonCancel" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
         <span class="textTitleModal">Ajouter une note</span>
+        <img id="cancelAddItemBtn" class="buttonBack" src="../assets/icon/close.svg" alt="menu-open" title="Annuler">
       </div>
-      <input type="text" id="title" placeholder="Ajouter un titre">
+      <input class="titleText" type="text" id="title" placeholder="Ajouter un titre">
       <div class="seperator-line"></div>
-      <textarea type="text" id="description" placeholder="Ajouter une description" cols="20" rows="2"></textarea>
+      <textarea id="description" placeholder="Ajouter une description" cols="20" rows="2"></textarea>
+      <div class="checkBox">
+        <input id="checkID" class="check" type="checkbox">
+        <label> Définir un rappel</label>
+      </div>
+      <div id="selectorReminder" class="selectorDate">
+        <div class="selector">
+          <div class="select">
+            <select id="jour"></select>
+            <span>Jour</span>
+          </div>
+          <div class="select">
+            <select id="mois"></select>
+            <span>Mois</span>
+          </div>
+          <div class="select">
+            <select id="annee"></select>
+            <span>Année</span>
+          </div>
+        </div>
+        <div class="selector">
+          <div class="select">
+            <select id="heure"></select>
+            <span>Heure</span>
+          </div>
+          <div class="select">
+            <select id="minute"></select>
+            <span>Minute</span>
+          </div>          
+
+        </div>
+      </div>
+      <div class="btnModal">
+        <button id="cancelAddItemBtn" class="buttonCancel" alt="menu-open" title="Annuler">Annuler</button>
         <button id="addItemBtn" class="buttonConfirmAdd" type="button">Ajouter</button>
+      </div>
     </div>
   </div>
 
   <!-- La modal d'édition -->
   <div class="modal" id="editModal">
-    <div class="modal-content">
+    <div id="editModalContent" class="modal-content">
       <div class="titleModal">
-        <img id="cancelEditItemBtn" class="buttonCancel" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
         <span class="textTitleModal">Modifier une note</span>
+        <img id="cancelEditItemBtn" class="buttonBack" src="../assets/icon/close.svg" alt="menu-open" title="Annuler">
       </div>
       <input id="editTitle" type="text" placeholder="Modifier votre titre">
       <textarea placeholder="Modifier votre description" name="description" id="editDescription" cols="20" rows="2"></textarea>
-      <button id="editItemBtn" class="buttonConfirmAdd" type="button">Modifier</button>
+      <div class="fullSuccess">
+        <img id="iconFullScreens" src="../assets/icon/fullscreen.svg" alt="fullscreen icon">
+        <button id="editItemBtn" class="buttonConfirmAdd" type="button">Modifier</button>
+      </div>
     </div>
   </div>
 
@@ -88,7 +127,7 @@
     <div class="modal" id="uploadModal">
       <div class="modal-content-EI">
         <div class="titleModal">
-          <img id="cancelUploadBtn" class="buttonCancel" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
+          <img id="cancelUploadBtn" class="buttonBack" src="../assets/icon/menu-open.svg" alt="menu-open" title="Annuler">
           <span class="textTitleModal">Import / Export</span>
         </div>
         <span class="spanWarningMessageFile">Votre fichier se télécharge après avoir enregistrer sa destination.</span>

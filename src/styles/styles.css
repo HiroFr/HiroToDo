@@ -57,7 +57,7 @@
   font-size: 20px;
   color: var(--primary-text-color);
   cursor: pointer;
-  padding: 4px 12px;
+  padding: 4px 50px;
   font-family: var(--font-family);
 }
 
@@ -161,6 +161,18 @@
   display: flex;
   gap: 23px;
   background-color: var(--background-dark-color);
+  width: 65%;
+  height: 75%;
+  padding: 16px;
+  margin: 54px 0px 0px 100px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.menu-modal-content {
+  display: flex;
+  gap: 23px;
+  background-color: var(--background-dark-color);
   width: 196px;
   height: 580px;
   padding: 10px;
@@ -171,6 +183,7 @@
 .titleModal {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4px;
 }
 
@@ -178,10 +191,9 @@
   font-size: large;
 }
 
-.modal-content input {
+.titleText {
   border-radius: 8px;
   padding: 8px;
-  margin: 0px 10px;
   border: none;
   background-color: var(--black002);
   color: var(--white001);
@@ -193,7 +205,6 @@
   font-size: 16px;
   border-radius: 8px;
   padding: 16px 8px;
-  margin: 0px 10px;
   border: none;
   background-color: var(--black002);
   color: var(--white001);
@@ -254,7 +265,7 @@ textarea::-webkit-scrollbar-track {
   cursor: pointer;
 }
 
-.buttonCancel {
+.buttonBack {
   border-radius: 8px;
   border: 2px solid var(--cancel-border-color);
   font-size: 20px;
@@ -263,8 +274,19 @@ textarea::-webkit-scrollbar-track {
   padding: 4px;
 }
 
-.buttonCancel:hover {
+.buttonBack:hover {
   background-color: var(--cancel-background-color);
+}
+
+.buttonCancel {
+  border-radius: 8px;
+  border: 2px solid var(--cancel-background-color);
+  font-size: 20px;
+  color: var(--primary-text-color);
+  background-color: var(--cancel-background-color);
+  cursor: pointer;
+  padding: 4px 50px;
+  font-family: var(--font-family);
 }
 
 .buttonEdit {
@@ -423,4 +445,46 @@ textarea::-webkit-scrollbar-track {
 
 .network img {
   cursor: pointer;
+}
+
+.btnModal {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.selectorDate {
+  display: none;
+  gap: 64px;
+}
+
+.selector {
+  display: flex;
+  gap: 8px;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select span {
+  font-size: 12px;
+}
+
+select {
+  border: none;
+  background-color: var(--black002);
+  color: var(--secondary-text-color);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.checkBox {
+  font-size: 16px;
+}
+
+.check {
+  
 }
