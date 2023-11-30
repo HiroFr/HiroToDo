@@ -9,6 +9,7 @@
   <div class="navMenu">
     <img id="openMenuModalBtn" src="../assets/icon/menu-burger.svg" alt="menu-burger" title="Menu">
       <div class="addNote">
+        <!-- <button class="iEdit" >Edit Modal</button> -->
         <div class="search">
           <img src="../assets/icon/search.svg" alt="search">
           <input id="searchInput" type="text" placeholder="Recherche ...">
@@ -49,13 +50,12 @@
 
   <!-- La modal d'ajout -->
   <div class="modal" id="addModal">
+    <div id="error"></div>
     <div id="modalContent" class="modal-content">
       <div class="titleModal">
         <span class="textTitleModal">Ajouter une note</span>
-        <img id="cancelAddItemBtn" class="buttonBack" src="../assets/icon/close.svg" alt="menu-open" title="Annuler">
       </div>
       <input class="titleText" type="text" id="title" placeholder="Ajouter un titre">
-      <div class="seperator-line"></div>
       <textarea id="description" placeholder="Ajouter une description" cols="20" rows="2"></textarea>
       <div class="checkBox">
         <input id="checkID" class="check" type="checkbox">
@@ -85,11 +85,10 @@
             <select id="minute"></select>
             <span>Minute</span>
           </div>          
-
         </div>
       </div>
       <div class="btnModal">
-        <button id="cancelAddItemBtn" class="buttonCancel" alt="menu-open" title="Annuler">Annuler</button>
+        <button id="cancelAddItemBtn" class="buttonCancel">Annuler</button>
         <button id="addItemBtn" class="buttonConfirmAdd" type="button">Ajouter</button>
       </div>
     </div>
@@ -100,12 +99,41 @@
     <div id="editModalContent" class="modal-content">
       <div class="titleModal">
         <span class="textTitleModal">Modifier une note</span>
-        <img id="cancelEditItemBtn" class="buttonBack" src="../assets/icon/close.svg" alt="menu-open" title="Annuler">
       </div>
-      <input id="editTitle" type="text" placeholder="Modifier votre titre">
+      <input class="titleText" id="editTitle" type="text" placeholder="Modifier votre titre">
       <textarea placeholder="Modifier votre description" name="description" id="editDescription" cols="20" rows="2"></textarea>
-      <div class="fullSuccess">
-        <img id="iconFullScreens" src="../assets/icon/fullscreen.svg" alt="fullscreen icon">
+      <div class="checkBox">
+        <input id="editCheckID" class="check" type="checkbox">
+        <label> Définir un rappel</label>
+      </div>
+      <div id="editSelectorReminder" class="selectorDate">
+        <div class="selector">
+          <div class="select">
+            <select id="editJour"></select>
+            <span>Jour</span>
+          </div>
+          <div class="select">
+            <select id="editMois"></select>
+            <span>Mois</span>
+          </div>
+          <div class="select">
+            <select id="editAnnee"></select>
+            <span>Année</span>
+          </div>
+        </div>
+        <div class="selector">
+          <div class="select">
+            <select id="editHeure"></select>
+            <span>Heure</span>
+          </div>
+          <div class="select">
+            <select id="editMinute"></select>
+            <span>Minute</span>
+          </div>          
+        </div>
+      </div>
+      <div class="btnModal">
+        <button id="cancelEditItemBtn" class="buttonCancel">Annuler</button>
         <button id="editItemBtn" class="buttonConfirmAdd" type="button">Modifier</button>
       </div>
     </div>
@@ -157,16 +185,17 @@
     </div>
 
   <div class="footer"> <!-- Footer -->
-    <span>Design and Build by <a href="https://github.com/HiroFr/HiroToDo" target="_blank">HiroFr</a> - </span>
-    <span>Bêta v4.5</span>
+    <span>Design and Build by <a href="https://github.com/HiroFr/HiroToDo" target="_blank">HiroFr</a></span>
+    <span>Bêta - v5.0</span>
   </div>
   <script src="js/displayItem.js"></script>
+  <script src="js/deleteConfirmItem.js"></script>
   <script src="js/addItem.js"></script>
   <script src="js/editItem.js"></script>
-  <script src="js/deleteConfirmItem.js"></script>
   <script src="js/searchItem.js"></script>
   <script src="js/exportData.js"></script>
   <script src="js/uploadData.js"></script>
+  <script src="js/errorMessage.js"></script>
   <script src="js/menuModal.js"></script>
 </body>
 </html>

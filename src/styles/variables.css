@@ -18,13 +18,18 @@ html {
   --background-dark-color: #121113;
   --items-dark-color: #232225;
   --button-dark-blue-color: #303374;
+  --button-dark-purple-color: #512454;
   --primary-text-color: #EEEEF0;
   --secondary-text-color: #B5B2BC;
   --border-dark-grey-color: #3C393F;
+  --border-dark-purple-color: #734079;
+  --border-dark-blue-color: #4A4A95;
+  --border: #3C393F;
   --confirm-background-color: #174933;
   --cancel-background-color: #611623;
   --cancel-border-color: #8C333A;
   --cancel-text-color-dark: #FF9592;
+  --cancel-text-color-dark-2: #FFD1D9;
 
 
   /* -- gradient -- */
@@ -41,6 +46,7 @@ body {
   font-family: var(--font-family);
   font-size: 20px;
   border-radius: 8px;
+  margin: 19px 21px 0px 21px;
 }
 
 textarea:focus, input:focus {

@@ -3,7 +3,7 @@
 .navMenu {
   display: flex;
   justify-content: space-between;
-  margin-top: 6px;
+  margin-bottom: 21px;
 }
 
 .navMenu img {
@@ -41,13 +41,17 @@
 
 .buttonAdd {
   border-radius: 8px;
-  border: 2px solid var(--button-dark-blue-color);
-  background-color: var(--button-dark-blue-color);
+  border: 2px solid var(--button-dark-purple-color);
+  background-color: var(--button-dark-purple-color);
   font-size: 20px;
   color: var(--primary-text-color);
   cursor: pointer;
   padding: 4px 12px;
   font-family: var(--font-family);
+}
+
+.buttonAdd:hover {
+  border: 2px solid var(--border-dark-purple-color);
 }
 
 .buttonConfirmAdd {
@@ -71,42 +75,42 @@
 
 #itemList {
   display: flex;
-  margin-top: 10px;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
 .allElement {
   display: flex;
   background-color: var(--items-dark-color);
-  border-radius: 8px;
-  padding: 6px 0px;
+  border-radius: 12px;
   align-items: center;
 }
 
 .zdtDiv {
-  width: 225px;
-  height: 84px;
+  display: flex;
+  width: 229px;
   overflow: hidden;
-  margin: 8px 0px -8px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 16px 0px 16px 16px;
 }
 
 .zdtName {
-  display: block;
-  padding-top: 8px;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 20px;
 }
 
 .zdtDesc {
-  display: block;
-  padding-top: 12px;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 18px;
 }
 
 .moreIcon {
@@ -136,9 +140,13 @@
   font-size: small;
   color: var(--grey);
   padding: 10px 0px;
-  bottom: 0px;
   left: 35%;
+  top: 100%;
   text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  gap: 180px;
+  position: sticky;
 }
 
 .footer a {
@@ -161,12 +169,13 @@
   display: flex;
   gap: 23px;
   background-color: var(--background-dark-color);
+  border: 2px solid var(--border-dark-grey-color);
   width: 65%;
   height: 75%;
   padding: 16px;
   margin: 54px 0px 0px 100px;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .menu-modal-content {
@@ -365,12 +374,13 @@ textarea::-webkit-scrollbar-track {
   border: 2px solid var(--border-dark-grey-color);
 }
 
-.search input {
+.search input[type=text] {
+  margin-left: 8px;
   background: none;
   border: 0px;
   font-size: 20px;
   color: var(--secondary-text-color);
-  width: 150px;
+  width: 160px;
 }
 
 .search input::placeholder {
@@ -485,6 +495,26 @@ select {
   font-size: 16px;
 }
 
-.check {
+/* .check {
   
+} */
+
+.errorBox {
+  position: absolute;
+  margin: 10px;
+  right: 0;
+  display: flex;
+  width: 322px;
+  height: 60px;
+  background-color: var(--cancel-background-color);
+  border-radius: 12px;
+  align-items: center;
+}
+
+.errorBox img {
+  margin: 14px;
+}
+
+.errorMessage {
+  color: var(--cancel-text-color-dark-2);
 }

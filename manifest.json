@@ -1,7 +1,7 @@
 {
   "name": "HiroToDo - Bêta",
   "description": "Une Todo-List / Des notes",
-  "version": "4.5",
+  "version": "5.0",
   "manifest_version": 3,
   "icons": {
     "16": "assets/icon/icon16.png",
@@ -16,7 +16,15 @@
     "scripting",
     "activeTab",
     "notifications",
+    "alarms",
     "downloads",
-    "fileSystem"
-  ]
+    "storage"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "permissions": [
+      "alarms",
+      "storage"
+    ]
+  }
 }

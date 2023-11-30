@@ -32,15 +32,22 @@ document.getElementById('uploadButton').addEventListener('click', function () {
       const reader = new FileReader();
       reader.onload = function (event) {
           const jsonData = event.target.result;
-          try {
-            localStorage.setItem("items", jsonData);
-              alert("La data à été importé avec succès !\nVous devez recharger l'extension.");
-          } catch (error) {
-              alert("Erreur lors de l'import.");
+          console.log(jsonData);
+            try {
+              saveItemsToLocalStorage(jsonData);
+              console.log(jsonData);
+                alert("La data à été importé avec succès !\nVous devez recharger l'extension.");
+            } catch (error) {
+                alert("Erreur lors de l'import :", error);
+            }
+
+            reader.onerror = function(error) {
+              console.error('Une erreur s\'est produite lors de la lecture du fichier :', error);
           }
+          
       };
       reader.readAsText(file);
-      chrome.runtime.reload();
+      // chrome.runtime.reload();
   }
 });
 

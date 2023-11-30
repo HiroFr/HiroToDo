@@ -1,38 +1,28 @@
-const openAddModalBtn = document.getElementById("btnOpenAddModal");
-const addModal = document.getElementById("addModal");
-const addItemBtn = document.getElementById("addItemBtn");
-const cancelAddBtn = document.getElementById("cancelAddItemBtn");
+document.addEventListener('DOMContentLoaded', function() {
+
 const nameInput = document.getElementById("title");
-const descriptionInput = document.getElementById("description");
-const iconFullScreen = document.getElementById("iconFullScreen");
-const addModalContent = document.getElementById("modalContent");
 const jourSelect = document.getElementById('jour');
 const moisSelect = document.getElementById('mois');
+const checkID = document.getElementById('checkID');
 const anneeSelect = document.getElementById('annee');
 const heureSelect = document.getElementById('heure');
+const addModal = document.getElementById("addModal");
 const minuteSelect = document.getElementById('minute');
-const checkID = document.getElementById('checkID');
+const addItemBtn = document.getElementById("addItemBtn");
+const descriptionInput = document.getElementById("description");
+const cancelAddBtn = document.getElementById("cancelAddItemBtn");
+const openAddModalBtn = document.getElementById("btnOpenAddModal");
 const selectorReminder = document.getElementById('selectorReminder');
 
-for (var i = 1; i < 24; i++) {
-    heureSelect.options[heureSelect.options.length] = new Option(i, i);
-}
+for (var i = 0; i < 24; i++) { heureSelect.options[heureSelect.options.length] = new Option(i, i); }
 
-for (var i = 1; i < 60; i++) {
-    minuteSelect.options[minuteSelect.options.length] = new Option(i, i);
-}
+for (var i = 0; i < 60; i++) { minuteSelect.options[minuteSelect.options.length] = new Option(i, i); }
 
-for (var i = 1; i <= 31; i++) {
-    jourSelect.options[jourSelect.options.length] = new Option(i, i);
-}
+for (var i = 1; i <= 31; i++) { jourSelect.options[jourSelect.options.length] = new Option(i, i); }
 
-for (var i = 1; i <= 12; i++) {
-    moisSelect.options[moisSelect.options.length] = new Option(i, i);
-}
+for (var i = 1; i <= 12; i++) { moisSelect.options[moisSelect.options.length] = new Option(i, i); }
 
-for (var i = 2100; i >= 2023; i--) {
-    anneeSelect.options[anneeSelect.options.length] = new Option(i, i);
-}
+for (var i = 2050; i >= 2023; i--) { anneeSelect.options[anneeSelect.options.length] = new Option(i, i); }
 
 function askReminder() {
   if (checkID.checked == false) {
@@ -49,68 +39,43 @@ checkID.addEventListener("change", askReminder);
 function addItem() {
     const itemTitle = nameInput.value;
     const itemDescription = descriptionInput.value;
-
     var day = jourSelect.options[jourSelect.selectedIndex].value;
     var month = moisSelect.options[moisSelect.selectedIndex].value - 1;
     var years = anneeSelect.options[anneeSelect.selectedIndex].value;
-    var hours = heureSelect.options[heureSelect.selectedIndex].value;
+    var hours = heureSelect.options[heureSelect.selectedIndex].value - 1;
     var minutes = minuteSelect.options[minuteSelect.selectedIndex].value;
-
-    //var dateRappel = `${years}-${month + 1 < 10 ? '0' : ''}${month + 1}-${day < 10 ? '0' : ''}${day}T${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:00.000Z`;
-    //console.log(dateRappel);
-    var dateRappelObject = new Date(Date.UTC(years, month, day, hours, minutes));
-
+    var dateRappelObject = new Date(Date.UTC(years, month, day, hours, minutes)).getTime();
     //console.log(dateRappelObject.getUTCDate() + "/" + (dateRappelObject.getUTCMonth() + 1) + "/" + dateRappelObject.getUTCFullYear() + "-" + dateRappelObject.getUTCHours() + "h" + dateRappelObject.getUTCMinutes() + "min");
+    var currentlyDate = new Date().getTime();
 
-    var currentlyDate = new Date();
-
-    var jourToday = currentlyDate.getDate();
-    var moisToday = currentlyDate.getMonth();
-    var anneeToday = currentlyDate.getFullYear();
-    var heureToday = currentlyDate.getHours();
-    var minutesToday = currentlyDate.getMinutes();
-
-    var jourOther = dateRappelObject.getUTCDate();
-    var moisOther = dateRappelObject.getUTCMonth();
-    var anneeOther = dateRappelObject.getUTCFullYear();
-    var heureOther = dateRappelObject.getUTCHours();
-    var minutesOther = dateRappelObject.getUTCMinutes();
-
-    if (jourToday >= jourOther &&
-        moisToday >= moisOther &&
-        anneeToday >= anneeOther &&
-        heureToday >= heureOther &&
-        minutesToday >= minutesOther)
-    {
-        return console.log(`"ERREUR : La date doit être supérieur à celle de maintenant !` + ` ` + `Date et heure aujourd'hui : ${jourToday}/${moisToday}/${anneeToday}-${heureToday}h${minutesToday}min`+ ` ` + `Date et heure autre : ${jourOther}/${moisOther}/${anneeOther}-${heureOther}h${minutesOther}min`);
-        //return addToDo.innerHTML = "";
-    };
-    
-    if (itemTitle.trim() || itemDescription.trim() !== "") {
-        const items = getItemsFromLocalStorage();
-        if (checkID.checked == false) {
-          const newItemWithoutReminder = {
-            title: itemTitle,
-            description: itemDescription
-          };
-          items.push(newItemWithoutReminder);
-          console.log("newItemWithoutReminder");
+    if (currentlyDate >= dateRappelObject) {
+    errorMessage();
+    console.log(`"ERREUR : La date doit être supérieur à celle de maintenant !` + ` ` + `Date et heure aujourd'hui : ${new Date(currentlyDate)}`+ ` ` + `Date et heure autre : ${new Date(dateRappelObject)}`);
+    } else if (itemTitle.trim() || itemDescription.trim() !== "") {
+        getItemsFromLocalStorage(function (items) {
+          if (typeof items === 'string') {
+            try {
+                const itemsArray = JSON.parse(items);
+                const newItem = checkID.checked == false ? 
+                    { title: itemTitle, description: itemDescription } : 
+                    { title: itemTitle, description: itemDescription, reminder: dateRappelObject };
+                itemsArray.push(newItem);
+                const itemsString = JSON.stringify(itemsArray);
+                saveItemsToLocalStorage(itemsString);
+                nameInput.value = "";
+                descriptionInput.value = "";
+            } catch (error) {
+                console.error('Erreur lors de l\'analyse de items:', error);
+            }
         } else {
-          const newItem = {
-            title: itemTitle,
-            description: itemDescription,
-            reminder: dateRappelObject
-          };
-          items.push(newItem);
-          console.log("newItemWithReminder");
+            console.error('items n\'est pas une chaîne de caractères :', items);
         }
-        saveItemsToLocalStorage(items);
-        nameInput.value = "";
-        descriptionInput.value = "";
-        dateRappelObject.value = "";
-
         displayItems();
         cancelAddModal();
+      });
+    } else {
+      errorMessageVoid();
+      console.log('Vous devez remplir un champs.');
     }
 }
 
@@ -118,28 +83,14 @@ function openAddModal() {
     addModal.style.display = "block";
 }
 
-/* function fullScreen() {
-    if (addModalContent.style.width == "97%") {
-        addModalContent.style.width = "30%";
-        iconFullScreen.src = "../../assets/icon/fullscreen.svg";
-    } else {
-        addModalContent.style.width = "97%";
-        iconFullScreen.src = "../../assets/icon/fullscreen_exit.svg";
-    }
-} */
-
 function cancelAddModal() {
     addModal.style.display = "none";
     nameInput.value = "";
     descriptionInput.value = "";
 }
 
-
-
+addItemBtn.addEventListener("click", addItem);
 cancelAddBtn.addEventListener("click", cancelAddModal);
-
 openAddModalBtn.addEventListener("click", openAddModal);
 
-addItemBtn.addEventListener("click", addItem);
-
-/* iconFullScreen.addEventListener("click", fullScreen); */
+});
