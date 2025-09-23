@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: #121212;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+  border-radius: 5px;
+}
+
+:root {
+  --background: #fdfdff;
+  --primary: #2e2e2e;
+  --secondary: #9d9d9d;
+  --btn: #5d37f4;
+  --text-card: #272962;
+  --accent: #f0f1fe;
+  --outline: #0066ff;
+  --border: #dfdfdf;
+  --hover: #e0d7fe;
+  --cancel: #d7214c;
+  --validate: #11a758;
+  --generalColor: #ffffff;
+  --input: #f5f5f5;
+}
+
+.dark {
+  --background: #121212;
+  --primary: #e6e6e6;
+  --secondary: #9d9d9d;
+  --btn: #7c5cff;
+  --text-card: #dfe3ff;
+  --accent: #1c1c28;
+  --outline: #4a7dff;
+  --border: #2a2a2a;
+  --hover: #3a2f6d;
+  --cancel: #d6455c;
+  --validate: #26a65b;
+  --generalColor: #ffffff;
+  --input: #1e1e1e;
+}
+
+.dark .scrollbar::-webkit-scrollbar-thumb {
+  background-color: #475569;
+}
+.dark .scrollbar::-webkit-scrollbar-track {
+  background-color: #181b22;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-text-card: var(--text-card);
+  --color-accent: var(--accent);
+  --color-hover: var(--hover);
+  --color-outlinecolor: var(--outline);
+  --color-bordercolor: var(--border);
+  --color-cancel: var(--cancel);
+  --color-validate: var(--validate);
+  --color-general: var(--generalColor);
+  --color-btn: var(--btn);
+  --color-input: var(--input);
+}
